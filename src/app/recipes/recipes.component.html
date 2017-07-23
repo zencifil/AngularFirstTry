@@ -15,6 +15,12 @@
       <p appBasicHighlight>Please select a recipe...</p>
       <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'blue'">Please select a recipe...</p>
     </span>
+    <div [ngSwitch]="value">
+      <p *ngSwitchCase="5">Value is 5</p>
+      <p *ngSwitchCase="10">Value is 10</p>
+      <p *ngSwitchCase="15">Value is 15</p>
+      <p *ngSwitchDefault>Value is Default</p>
+    </div>
   </div>
 </div>
 
