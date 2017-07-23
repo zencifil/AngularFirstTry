@@ -7,7 +7,11 @@
       *ngIf="selectedRecipe"
       [recipe]="selectedRecipe">
     </app-recipe-detail>
-    <span *ngIf="!selectedRecipe" #infoText>
+    <!-- <span *ngIf="!selectedRecipe" #infoText>
+      <p appBasicHighlight>Please select a recipe...</p>
+      <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'blue'">Please select a recipe...</p>
+    </span> -->
+    <span *appUnless="selectedRecipe" #infoText>
       <p appBasicHighlight>Please select a recipe...</p>
       <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'blue'">Please select a recipe...</p>
     </span>
