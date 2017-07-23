@@ -7,9 +7,11 @@
       *ngIf="selectedRecipe"
       [recipe]="selectedRecipe">
     </app-recipe-detail>
-    <span #infoText>
+    <span *ngIf="!selectedRecipe" #infoText>
       <p appBasicHighlight>Please select a recipe...</p>
       <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'blue'">Please select a recipe...</p>
     </span>
   </div>
 </div>
+
+<!-- *ngIf="selectedRecipe; else infoText" can't make this work!!!-->

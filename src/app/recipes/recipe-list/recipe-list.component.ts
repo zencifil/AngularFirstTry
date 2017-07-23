@@ -10,7 +10,7 @@ import { Recipe } from '../recipe.model';
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [
     new Recipe('Test', 'test test test test', 'https://pbs.twimg.com/profile_images/539920029/svs_400x400.jpg'),
-    new Recipe('Test', 'test test test test', 'https://pbs.twimg.com/profile_images/539920029/svs_400x400.jpg')
+    new Recipe('Testere', 'testere test test test', 'https://pbs.twimg.com/profile_images/539920029/svs_400x400.jpg')
   ];
 
   @Output() recipeSelected = new EventEmitter<Recipe>();
