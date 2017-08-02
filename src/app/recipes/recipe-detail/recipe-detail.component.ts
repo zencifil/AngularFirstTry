@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from "@angular/router";
 
 import { Recipe } from '../recipe.model';
 import { RecipeService } from "app/recipes/recipe.service";
+import { AuthService } from "app/auth/auth.service";
 
 @Component({
   selector: 'app-recipe-detail',
@@ -14,6 +15,7 @@ export class RecipeDetailComponent implements OnInit {
   id: number;
 
   constructor(private recipeService: RecipeService, 
+              private authService: AuthService,
               private route: ActivatedRoute,
               private router: Router) { }
 
@@ -31,7 +33,12 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   onEdit() {
-    this.router.navigate(['edit'], { relativeTo: this.route });
+    if (!this.authService.isAuthenticated()) {
+      this.router.navigate(['/signin']);
+    }
+    else {
+      this.router.navigate(['edit'], { relativeTo: this.route });
+    }
     // this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route });
   }
 
