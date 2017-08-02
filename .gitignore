@@ -38,3 +38,6 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+
+# sensitive info
+/src/app/auth/auth.module.ts
