@@ -40,4 +40,4 @@ testem.log
 Thumbs.db
 
 # sensitive info
-/src/app/auth/auth.module.ts
+/src/app/auth/auth.static.ts

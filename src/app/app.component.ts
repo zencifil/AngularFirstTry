@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
-import { AuthModule } from "app/auth/auth.module";
+import { AuthStatic } from "app/auth/auth.static";
 
 @Component({
   selector: 'app-root',
@@ -12,8 +12,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     firebase.initializeApp({
-      apiKey: AuthModule.apiKey,
-      authDomain: AuthModule.authDomain
+      apiKey: AuthStatic.apiKey,
+      authDomain: AuthStatic.authDomain
     });
   }
 
