@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from "app/home/home.component";
+import { HomeComponent } from "app/core/home/home.component";
 import { AuthGuard } from "app/auth/auth-guard.service";
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule', canLoad: [AuthGuard] }
+    { path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule' } //, canLoad: [AuthGuard] }
 ];
 
 @NgModule({
