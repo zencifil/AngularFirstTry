@@ -6,7 +6,7 @@ import { AuthGuard } from "app/auth/auth-guard.service";
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule' }
+    { path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule', canLoad: [AuthGuard] }
 ];
 
 @NgModule({
